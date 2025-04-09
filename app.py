@@ -59,16 +59,19 @@ def main():
 
     # --- Webcam Detection Tab ---
     with tab2:
-        st.write("Position the X-ray in front of your webcam and capture an image")
+        st.write("Position the X-ray in front of your webcam.")
 
-        webcam_image = st.camera_input("Take a picture")
+        start_cam = st.checkbox("Start Real-time Detection")
 
-        if webcam_image is not None:
-            image = Image.open(webcam_image)
-            st.image(image, caption="Captured Image", use_container_width=True)
+        if start_cam:
+            webcam_image = st.camera_input("Take a picture")
 
-            processed_image = detector.process_image(image)
-            st.image(processed_image, caption="Detection Result", use_column_width=True)
+            if webcam_image is not None:
+                image = Image.open(webcam_image)
+                st.image(image, caption="Captured Image", use_container_width=True)
+
+                processed_image = detector.process_image(image)
+                st.image(processed_image, caption="Detection Result", use_column_width=True)
 
 if __name__ == '__main__':
     main()
