@@ -3,11 +3,10 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 from PIL import Image
-import torch
 
 class TumorDetectionApp:
     def __init__(self):
-        self.model = YOLO('exp4_best.pt')  # Load your trained YOLO model
+        self.model = YOLO('exp4_best.pt')
         self.confidence_threshold = 0.5
 
     def process_image(self, image):
@@ -20,9 +19,7 @@ class TumorDetectionApp:
         for result in results:
             boxes = result.boxes
             for box in boxes:
-                x1, y1, x2, y2 = box.xyxy[0]
-                x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
-
+                x1, y1, x2, y2 = map(int, box.xyxy[0])
                 confidence = float(box.conf)
                 class_id = int(box.cls)
 
@@ -35,8 +32,21 @@ class TumorDetectionApp:
 
         return processed_image
 
+def set_background():
+    st.markdown("""
+        <style>
+            body {
+                background-color: lavender;
+            }
+            .stApp {
+                background-color: lavender;
+            }
+        </style>
+    """, unsafe_allow_html=True)
+
 def main():
-    st.set_page_config(page_title="X-Ray Tumor Detection", layout="wide")
+    st.set_page_config(page_title="Smart Scan - Tumor Detection", layout="wide")
+    set_background()
 
     detector = TumorDetectionApp()
 
