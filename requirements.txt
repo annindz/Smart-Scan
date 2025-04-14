@@ -1,7 +1,9 @@
 streamlit
-opencv-python-headless==4.8.0.74
-numpy>=1.26.0
-Pillow==9.5.0
-torch==2.2.2
-ultralytics==8.0.20
-scikit-image
+opencv-python-headless
+numpy
+ultralytics
+Flask
+Pillow
+streamlit
+torch
+
