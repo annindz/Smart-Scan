@@ -4,3 +4,6 @@ numpy
 Pillow
 torch
 ultralytics
+Flask
+
+
