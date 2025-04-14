@@ -1,6 +1,0 @@
-[theme]
-primaryColor = "#6a5acd"    # Lavender primary color
-backgroundColor = "#E6E6FA" # Lavender background color
-secondaryBackgroundColor = "#F8F8FF" # Lighter shade for containers
-textColor = "#000000"       # Black text
-font = "sans serif"
