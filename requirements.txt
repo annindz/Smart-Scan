@@ -1,7 +1,7 @@
 streamlit
 opencv-python-headless
 numpy
-ultralytics
+ultralytics>=8.0.0
 Flask
 Pillow
 streamlit
