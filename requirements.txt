@@ -2,8 +2,10 @@ streamlit
 opencv-python-headless
 numpy
 Pillow
-torch
-ultralytics
+torch==2.0.1
+ultralytics==8.0.20
 Flask
+scikit-image
+
 
 
