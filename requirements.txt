@@ -1,10 +1,11 @@
 streamlit
-opencv-python-headless==4.8.0.74
+opencv-python-headless
 numpy
 Pillow
-torch==2.0.1
-ultralytics==8.0.20
+torch
+ultralytics
 scikit-image
+
 
 
 
